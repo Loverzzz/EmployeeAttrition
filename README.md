@@ -14,12 +14,15 @@ Masalah ini penting karena tingginya tingkat pergantian karyawan dapat menambah 
 
 **Problem Statement** :
   - Perusahaan ingin melakukan proses identifikasi cepat menggunakan model machine learning / deep learning untuk mempermudah perusahaan terkait analisa attrition karyawan.
+  - Perusahaan ingin memprediksi attrition karyawan berdasarkan berbagai faktor yang mempengaruhi keputusan mereka untuk tetap bekerja atau meninggalkan perusahaan.
  
 **Goals**:
   - Membangun model prediksi attrition karyawan untuk memprediksi apakah karyawan akan meninggalkan perusahaan.
+  - Mengidentifikasi faktor-faktor yang paling signifikan yang mempengaruhi attrition.
   
 **Solution Statement** :
   - Solution 1: Menggunakan Artificial Neural Network (ANN) untuk meningkatkan akurasi prediksi dan menangani masalah hubungan kompleks antar variabel.
+  - Solution 2: Menggunakan Random Forest Tree untuk mengetahui faktor dari Attrtion yang paling penting
   
 ### Cakupan Proyek
 
@@ -105,7 +108,14 @@ Masalah ini penting karena tingginya tingkat pergantian karyawan dapat menambah 
      - Batch size : 32
      - Epoch : 200 with early stop Patience = 15
      - Optimizer Nadam
-
+       
+  - Feature Importance Random Forest:
+    ```rf = RandomForestClassifier(n_estimators=200, random_state=42)```
+    Pada baris ini, kita membuat objek model RandomForest dengan dua parameter utama:
+    
+    * n_estimators=200: Menentukan jumlah pohon keputusan (trees) yang akan digunakan dalam ensemble Random Forest. Dalam hal ini, model akan menggunakan 200 pohon.
+    * random_state=42: Menetapkan nilai untuk random_state agar model dapat direproduksi dan hasil yang sama dapat diperoleh jika kode dijalankan kembali dengan data yang sama.
+        
 ### Persiapan
 
 Sumber data: (https://github.com/dicodingacademy/dicoding_dataset/tree/main/employee)
@@ -136,7 +146,31 @@ Dashboard ini menggambarkan hubungan antara status karyawan yang keluar (attriti
 
 
 ## Conclusion
+ - Faktor Penting tingginya attrition rate berdasarkan RandomForest:
+   
+   ![image](https://github.com/user-attachments/assets/3a7d19e1-8eaa-4dd3-969e-dbce52007143)
+  1. MonthlyIncome
+  2. Age
+  3. EmployeeId
+  4. DailyRate
+  5. HourlyRate
+  6. MonthlyRate
+  7. TotalWorkingYears
+  8. Overtime_Yes
+  9. DistanceFromHome
+  10. YearsAtCompany
+  11. NumCompaniesWorked
+  12. PercentSalaryHike
+  13. Dst.
+      
+  * Fitur Terpenting:
+  - MonthlyIncome dan TotalWorkingYears adalah dua fitur yang paling penting dalam memprediksi attrition, dengan nilai Feature Importance yang paling tinggi.
+  - MonthlyIncome (Gaji Bulanan) menunjukkan seberapa besar pengaruh gaji terhadap keputusan karyawan untuk meninggalkan perusahaan.
+  - TotalWorkingYears (Jumlah Tahun Bekerja) menunjukkan bahwa lama bekerja di perusahaan berhubungan erat dengan keputusan untuk tetap atau meninggalkan pekerjaan.
 
+* Fitur yang Relatif Kurang Penting:
+  - EmployeeCount, StandardHours, dan beberapa fitur seperti EducationField Other dan JobRole Sales Executive memiliki nilai Feature Importance yang sangat rendah.
+  - Fitur-fitur ini tidak berkontribusi signifikan terhadap model prediksi dan mungkin tidak perlu diberi perhatian besar dalam pengambilan keputusan.
  - Metriks :
        - Accuracy: Persentase prediksi yang benar dari total prediksi.
        - Precision: Proporsi prediksi positif yang benar.
