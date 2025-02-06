@@ -123,7 +123,17 @@ Setup environment:
 
 ## Business Dashboard
 
-Jelaskan tentang business dashboard yang telah dibuat. Jika ada, sertakan juga link untuk mengakses dashboard tersebut.
+Dashboard : 
+![reynaldoabt-dashboard](https://github.com/user-attachments/assets/f289302b-7ee0-4787-9e4c-f945e3a177d8)
+
+Dashboard ini menggambarkan hubungan antara status karyawan yang keluar (attrition) dengan berbagai variabel seperti penghasilan bulanan, tingkat upah per jam, dan jam lembur. Berikut adalah penjelasan terkait setiap grafik di dashboard ini:
+
+1. Monthly Income vs Attrition: Grafik pertama menunjukkan jumlah karyawan yang keluar (attrition) berdasarkan kisaran penghasilan bulanan mereka. Di sini, kita bisa melihat bahwa jumlah karyawan yang keluar paling banyak berasal dari kategori dengan penghasilan bulanan yang lebih rendah, terutama yang memiliki penghasilan di bawah $5.000.000 Grafik ini memberikan wawasan mengenai pengaruh penghasilan terhadap keputusan karyawan untuk keluar dari perusahaan.
+
+2. Hourly Rate vs Attrition: Grafik kedua menggambarkan jumlah karyawan yang keluar (attrition) berdasarkan tarif upah per jam mereka. Dapat dilihat bahwa tarif upah yang lebih rendah (sekitar $40 hingga $60 per jam) memiliki jumlah karyawan keluar yang lebih tinggi. Ini bisa menunjukkan bahwa upah yang lebih rendah mungkin berhubungan dengan tingkat keluar yang lebih tinggi.
+
+3. Overtime vs Attrition: Grafik ketiga menunjukkan perbandingan antara karyawan yang bekerja lembur (overtime) dan yang tidak, dengan status keluar (attrition). Karyawan yang tidak bekerja lembur menunjukkan tingkat keluar yang lebih tinggi dibandingkan dengan mereka yang bekerja lembur, yang dapat mengindikasikan bahwa karyawan yang bekerja lembur cenderung lebih bertahan di perusahaan.
+
 
 ## Conclusion
 
